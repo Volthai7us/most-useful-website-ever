@@ -3,56 +3,45 @@ effectArr.forEach(element => {
     element.addEventListener("click", (e)=>
     {
         var ol = document.querySelector("ol");
-        //if(ol.childElementCount < 12)
-        {
-            var newLi = document.createElement("li");
-            newLi.addEventListener("click", () => {
-                ol.removeChild(newLi);
-            });
-            var num = e.target.parentElement.id;
-            var text = document.createTextNode(num);
-            newLi.appendChild(text);
-            ol.appendChild(newLi);
-        }
-        
+        var newLi = document.createElement("li");
+        var num = e.target.parentElement.id;
+        var text = document.createTextNode(num);
+        newLi.appendChild(text);
+        ol.appendChild(newLi);
     });
 });
 var onPlay = false;
 var playButton = document.querySelector(".created-sound .btn");
 playButton.addEventListener("click", () =>
 {
-    if(!onPlay)
-    {
-        onPlay = true;
-        var childArr = document.querySelectorAll("li");
-        var firstChild = childArr[0];
-        var length = childArr.length;
-        play(firstChild, 0, length);
-    }
+    onPlay = true;
+    var childArr = document.querySelectorAll("li");
+    var firstChild = childArr[0];
+    var length = childArr.length;
+    play(firstChild, 1, length);
 });
 
 function play(child, i, length)
 {
     const selectAudio = document.getElementById('audio-' + child.innerHTML);
+    let copyAudio = selectAudio.cloneNode();
     child.classList.add("playing-effect");
-    selectAudio.play();
-    selectAudio.addEventListener("ended", () => {
-        playNext(child, i, length)
-    });
-}
-
-function playNext(child, i, length)
-{
-    if(i < length - 1)
+    copyAudio.play();
+    if(i != length)
     {
-        play(child.nextSibling, i+1, length);
+        console.log("not end");
+        copyAudio.addEventListener("ended", () => {
+            play(child.nextSibling, i + 1, length);
+        });
     }
     else
     {
-        document.querySelectorAll("li").forEach(element => {
-            element.classList.remove("playing-effect");
+        console.log("end");
+        copyAudio.addEventListener("ended", () => {
+            document.querySelectorAll("li").forEach(element => {
+                element.classList.remove("playing-effect");
+            });
+            onPlay = false;
         });
-        onPlay = false;
     }
-    
 }
