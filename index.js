@@ -33,11 +33,11 @@ playButton.addEventListener("click", () =>
 
 function play(child, i, length)
 {
-    var soundPath = "/sounds/sound-" + child.innerHTML + ".wav";
-    var audio = new Audio(soundPath);
+    const selectAudio = document.getElementById('audio-' + child.innerHTML);
+    console.log(selectAudio.className);
     child.classList.add("playing-effect");
-    audio.play();
-    audio.addEventListener("ended", () => {
+    selectAudio.play();
+    selectAudio.addEventListener("ended", () => {
         playNext(child, i, length)
     });
 }
