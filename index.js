@@ -34,7 +34,6 @@ playButton.addEventListener("click", () =>
 function play(child, i, length)
 {
     const selectAudio = document.getElementById('audio-' + child.innerHTML);
-    console.log(selectAudio.className);
     child.classList.add("playing-effect");
     selectAudio.play();
     selectAudio.addEventListener("ended", () => {
