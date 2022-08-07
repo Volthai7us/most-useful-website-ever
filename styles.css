@@ -1,0 +1,109 @@
+body
+{
+    text-align: center;
+    background-color: #283149;
+}
+.sound-effects
+{
+    padding-top: 150px;
+    height: 300px;
+}
+
+.created-sound
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+footer
+{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    background-color: orange;
+    left: 0px;
+}
+
+h1
+{
+    margin: 50px auto 0 auto;
+    font-size: 5rem;
+    color: #DBEDF3;
+    font-family: "Arvo", cursive;
+    text-shadow: 3px 0 #DA0463;
+}
+
+h2
+{
+    margin: 0 35px 0 0;
+    padding: 30px 0 60px 0;
+    display: inline-block;
+    background-color: orange;
+    width: 100px;
+    height: 0px;
+}
+
+.btn
+{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    margin: auto 0 0 auto;
+    background-color: blue;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+}
+
+.btn:hover
+{
+    background-color: yellow;
+}
+
+li
+{
+    text-align: center;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    background-color: yellow;
+    margin: 20px 20px 0 0;
+    cursor: pointer;
+}
+
+li:hover
+{
+    background-color: red;
+}
+
+.playing-effect
+{
+    background-color: orange;
+}
+
+.effect
+{
+    position: relative;
+}
+
+.effect-add
+{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    bottom: -25px;
+    left: -25px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 2px 2px 2px 2px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.effect-add:hover
+{
+    background-color: gray;
+}
